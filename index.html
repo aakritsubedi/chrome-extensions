@@ -20,14 +20,118 @@
         </div>
         <div class="row">
             <div class="col-md-10 offset-1">
-                <div class="card mt-3">
-                    <div class="card-body bg-light">
+                <div class="card mt-3 bg-light">
+                    <div class="card-body">
                         <b>S.N: </b> <span>01</span><br>
                         <span class="h4 card-title">Bookmarklets</span>
                         <p class="card-text">Creating the bookmarklets that changes the pictures on any website to random dummy picture.</p>
                         Drag this button to <a href="javascript:(function(){let script=document.createElement('script');script.src='http://127.0.0.1:5500/scripts/01_bookmarklets.js';console.log(script.src);document.body.appendChild(script);})();"><kbd>bookmarklets</kbd></a> to bookmark tab.<br>
                         <b>Note: </b> 
                         <p class="card-text">Click <a href="http://kec.edu.np/" target="_blank">here</a> and click on the bookmark just added in above step.</p>
+                        <b>Link to code: </b> <a href="scripts/01_bookmarklets.js" target="_blank">01_bookmarklets.js</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-10 offset-1">
+                <div class="card mt-3 bg-light">
+                    <div class="card-body">
+                        <b>S.N: </b> <span>02</span><br>
+                        <span class="h4 card-title">The basics of Chrome Extension</span>
+                        <p>The basics about chrome extensions.<br>Here the basic extension prints the predefined message in console and changes the background color of 'p' tag and replace the src of img tag to any other src.-><code>content.js</code>.<br>The <code>manifest.json</code> file is like the configuration file containing the info of the extension.</p>
+                        <b>How to add chrome extensions in local machine</b>
+                        <ul>
+                            <li>visit <a href="chrome://extensions/">chrome://extensions/</a></li>
+                            <li>Turn on the developer mode</li>
+                            <li>Click on the <kbd>load unpacked</kbd></li>
+                            <li>Select the folder where the all necessary file exists.</li>
+                        </ul>
+                        <b>Link to code: </b> 
+                        <ul>
+                            <li><a href="chrome-ext/basics/content_scripts/content.js" target="_blank">content.js</a></li>
+                            <li><a href="chrome-ext/basics/manifest.json" target="_blank">manifest.json</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-10 offset-1">
+                <div class="card bg-light mt-3">
+                    <div class="card-body">
+                        <b>S.N:</b> <span>03</span><br/>
+                        <span class="h4 card-title">Including background.js in previous basic extension</span>
+                        <p>A <code>background.js</code>,loads when the chrome is loaded. The manifest.json is updated with reference to background.js file as shown below: </p>
+                        <code>
+                            "background": {
+                                "scripts": ["background_scripts/background.js"]
+                            }
+                        </code>
+                        <b>Link to code:</b>
+                        <ul>
+                            <li><a href="chrome-ext/final/content_scripts/content.js" target="_blank">content.js</a></li>
+                            <li><a href="chrome-ext/final/background_scripts/background.js" target="_blank">background.js</a></li>
+                            <li><a href="chrome-ext/final/manifest.json" target="_blank">manifest.json</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>        
+        </div>
+        <div class="row">
+            <div class="col-md-10 offset-1">
+                <div class="card bg-light mt-3">
+                    <div class="card-body">
+                        <b>S.N:</b> <span>04</span><br>
+                        <span class="h4 card-title">BlueRay Filter Extension</span>
+                        <p class="card-text">
+                            This chrome extension enables the blueray filter on the basis of time. 
+                        </p>
+                        <b>Steps: </b>
+                        <ul>
+                            <li>Create the working directory. Here,<code>chrome-ext/blueray</code></li>
+                            <li>Create all script folder and add two new files </li>
+                            <ul>
+                                <li><code>content_script.js</code></li>
+                                <li><code>background_script.js</code></li>
+                            </ul>
+                            <li>Add a new file and rename to <code>manifest.json</code></li>
+                            <ul>
+                                <li>
+                                    <code>
+                                        {
+                                            "manifest_version" : 2,
+                                            "name": "BlueRay Filter",
+                                            "version": "1.0",
+                                            "content_scripts":[
+                                                {
+                                                    "matches": [
+                                                        "<all_urls>"
+                                                    ],
+                                                    "js": ["scripts/content_scripts.js"]
+                                                }
+                                            ],
+                                            "background": {
+                                                "scripts": ["scripts/background_scripts.js"]
+                                            },
+                                            "browser_action":{
+                                                "default_icon": "img.png"
+                                            },
+                                            "permissions": [
+                                                "activeTab"
+                                            ]
+                                        }
+                                    </code>
+                                </li>
+                            </ul>
+                            <li>
+                                <code>content_scripts.js</code>  
+                            </li>
+                            <li>
+                                <code>background_scripts.js</code>
+                            </li>
+                        </ul>
+                        <b>Link to code: </b> <a href="chrome-ext/blueray">BlueRay Filter</a>
                     </div>
                 </div>
             </div>

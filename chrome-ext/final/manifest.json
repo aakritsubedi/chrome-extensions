@@ -1,0 +1,19 @@
+{
+    "manifest_version": 2,
+    "name": "The final chrome extension by Aakrit Subedi",
+    "version": "0.1",
+    "content_scripts": [
+        {
+            "matches": [
+                "<all_urls>"
+            ],
+            "js": ["content_scripts/content.js"]
+        }
+    ],
+    "background": {
+        "scripts": ["background_scripts/background.js"]
+    },
+    "browser_action":{
+        "default_icon": "img.png"
+    }
+}
